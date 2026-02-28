@@ -5,23 +5,7 @@ export default async function handler(req, res) {
   }
 
   try {
-    const body = await new Promise((resolve, reject) => {
-      let data = "";
-
-      req.on("data", chunk => {
-        data += chunk;
-      });
-
-      req.on("end", () => {
-        resolve(JSON.parse(data));
-      });
-
-      req.on("error", err => {
-        reject(err);
-      });
-    });
-
-    const { name, phone, email, message } = body;
+    const { name, phone, email, message } = req.body;
 
     console.log("New booking:", name, phone, email, message);
 
