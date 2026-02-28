@@ -32,3 +32,106 @@ footer {
     color: white;
     padding: 20px;
 }
+.whatsapp-float {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #25D366;
+    color: white;
+    font-size: 14px;
+    width: 69px;
+    height: 69px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 69px;
+    text-decoration: none;
+    font-weight: bold;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+.instagram-float {
+    position: fixed;
+    bottom: 95px;   /* Above WhatsApp */
+    right: 20px;
+    background-color: #E1306C;
+    color: white;
+    font-size: 14px;
+    width: 69px;
+    height: 69px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 69px;
+    text-decoration: none;
+    font-weight: bold;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+.testimonials {
+    padding: 50px 20px;
+    background-color: #f5f5f5;
+}
+
+.testimonials h2 {
+    margin-bottom: 30px;
+}
+
+.testimonial-box {
+    background: white;
+    padding: 20px;
+    margin: 15px auto;
+    width: 80%;
+    max-width: 500px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.stars {
+    color: #FFD700;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.testimonial-box h4 {
+    margin-top: 15px;
+    font-weight: normal;
+}
+/* Sticky Mobile Footer */
+.mobile-footer {
+    display: none;   /* Hidden on desktop */
+}
+
+@media (max-width: 768px) {
+    .mobile-footer {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        background: #111;
+        display: flex;
+        justify-content: space-around;
+        padding: 12px 0;
+        z-index: 999;
+    }
+
+    .mobile-footer a {
+        color: white;
+        text-decoration: none;
+        font-size: 14px;
+        font-weight: bold;
+    }
+
+    body {
+        padding-bottom: 60px; /* Prevent content hiding behind footer */
+    }
+}
+.map-section {
+    padding: 50px 20px;
+    background: #f9f9f9;
+}
+
+.map-section h2 {
+    margin-bottom: 20px;
+}
+
+.map-section iframe {
+    border-radius: 12px;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+}
