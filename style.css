@@ -106,11 +106,8 @@ footer {
     background: rgba(255, 255, 255, 0.08);
     backdrop-filter: blur(12px);
     padding: 25px;
-    margin: 20px auto;
-    width: 80%;
-    max-width: 550px;
-    border-radius: 16px;
-    border: 1px solid rgba(255,255,255,0.15);
+    margin: 20px 15px;   /* Equal side spacing */
+    border-radius: 18px;
     box-shadow: 0 10px 30px rgba(0,0,0,0.4);
     color: white;
 }
@@ -381,4 +378,8 @@ header p {
         overflow-x: hidden;
     }
 
+}
+
+body {
+    overflow-x: hidden;
 }
