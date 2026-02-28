@@ -58,7 +58,14 @@ window.addEventListener("DOMContentLoaded", function () {
             console.log("Status:", response.status);
 
             const result = await response.json();
-document.getElementById("responseMessage").innerText = result.message;
+
+const msg = document.getElementById("responseMessage");
+msg.innerText = result.message;
+msg.style.color = "green";
+msg.style.fontWeight = "bold";
+msg.style.fontSize = "16px";
+msg.style.marginTop = "15px";
+
 form.reset();
 
         } catch (err) {
