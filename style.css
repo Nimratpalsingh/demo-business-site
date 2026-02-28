@@ -91,7 +91,8 @@ footer {
 }
 .testimonials {
     padding: 60px 20px;
-    background: transparent;
+    max-width: 700px;
+    margin: 0 auto;
 }
 
 .testimonials h2 {
@@ -106,7 +107,7 @@ footer {
     background: rgba(255, 255, 255, 0.08);
     backdrop-filter: blur(12px);
     padding: 25px;
-    margin: 20px 15px;   /* Equal side spacing */
+    margin: 20px 0;   /* Only vertical spacing */
     border-radius: 18px;
     box-shadow: 0 10px 30px rgba(0,0,0,0.4);
     color: white;
@@ -348,10 +349,6 @@ header p {
         font-size: 14px;
     }
 
-    .testimonial-box {
-        width: 95%;
-    }
-
     .about,
     .services {
         width: 95%;
@@ -360,22 +357,6 @@ header p {
 
     section {
         padding: 40px 15px;
-    }
-
-}
-
-@media (max-width: 768px) {
-
-    .about,
-    .services,
-    .testimonials {
-        width: 92%;
-        margin: 20px auto;
-        border-radius: 18px;
-    }
-
-    body {
-        overflow-x: hidden;
     }
 
 }
