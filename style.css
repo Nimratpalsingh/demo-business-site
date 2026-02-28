@@ -1,0 +1,34 @@
+body {
+    font-family: Arial;
+    margin: 0;
+    text-align: center;
+}
+
+header {
+    background: #111;
+    color: white;
+    padding: 60px 20px;
+}
+
+.btn {
+    background: gold;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+
+section {
+    padding: 40px 20px;
+}
+
+.services ul {
+    list-style: none;
+    padding: 0;
+}
+
+footer {
+    background: #111;
+    color: white;
+    padding: 20px;
+}
