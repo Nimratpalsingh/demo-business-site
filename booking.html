@@ -37,23 +37,43 @@ window.addEventListener("DOMContentLoaded", function () {
     const form = document.getElementById("bookingForm");
 
     form.addEventListener("submit", async function(e) {
-        e.preventDefault();
+    e.preventDefault();
 
-        const data = {
-            name: form.name.value,
-            phone: form.phone.value,
-            email: form.email.value,
-            message: form.message.value
-        };
+    const msg = document.getElementById("responseMessage");
+    msg.innerText = "Submitting...";
+    msg.style.color = "black";
 
-        try {
-            const response = await fetch("/api/book", {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json"
-                },
-                body: JSON.stringify(data)
-            });
+    const data = {
+        name: form.name.value,
+        phone: form.phone.value,
+        email: form.email.value,
+        message: form.message.value
+    };
+
+    try {
+        const response = await fetch("/api/book", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(data)
+        });
+
+        const result = await response.json();
+
+        msg.innerText = result.message;
+        msg.style.color = "green";
+        msg.style.fontWeight = "bold";
+        msg.style.fontSize = "16px";
+
+        form.reset();
+
+    } catch (err) {
+        msg.innerText = "Something went wrong!";
+        msg.style.color = "red";
+        console.error(err);
+    }
+});
 
             console.log("Status:", response.status);
 
