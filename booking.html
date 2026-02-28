@@ -12,14 +12,16 @@
         <h2>Book a Consultation</h2>
         <p class="booking-subtext">Fill the details below and we’ll contact you within 24 hours.</p>
 
-        <form action="https://formspree.io/f/xvzbyyoz" method="POST">
-            <input type="text" name="name" placeholder="Full Name" required>
-            <input type="tel" name="phone" placeholder="Phone Number" required>
-            <input type="email" name="email" placeholder="Email Address" required>
-            <textarea name="message" placeholder="Tell us about your project" rows="4"></textarea>
+        <form id="bookingForm">
+    <input type="text" name="name" placeholder="Full Name" required>
+    <input type="tel" name="phone" placeholder="Phone Number" required>
+    <input type="email" name="email" placeholder="Email Address" required>
+    <textarea name="message" placeholder="Tell us about your project" rows="4"></textarea>
 
-            <button type="submit" class="btn">Submit Booking</button>
-        </form>
+    <button type="submit" class="btn">Submit Booking</button>
+</form>
+
+<p id="responseMessage"></p>
 
         <a href="index.html" class="back-link">← Back to Home</a>
     </div>
@@ -27,6 +29,21 @@
 <script>
 window.addEventListener("load", function () {
     document.body.classList.add("loaded");
+});
+</script>
+<script>
+document.getElementById("bookingForm").addEventListener("submit", async function(e) {
+    e.preventDefault();
+
+    const formData = new FormData(this);
+
+    const response = await fetch("/api/book", {
+        method: "POST",
+        body: formData
+    });
+
+    const result = await response.json();
+    document.getElementById("responseMessage").innerText = result.message;
 });
 </script>
     
