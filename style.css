@@ -366,3 +366,19 @@ header p {
     }
 
 }
+
+@media (max-width: 768px) {
+
+    .about,
+    .services,
+    .testimonials {
+        width: 92%;
+        margin: 20px auto;
+        border-radius: 18px;
+    }
+
+    body {
+        overflow-x: hidden;
+    }
+
+}
