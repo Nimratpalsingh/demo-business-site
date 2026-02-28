@@ -368,3 +368,9 @@ header p {
 body {
     overflow-x: hidden;
 }
+
+#responseMessage {
+    margin-top: 20px;
+    font-size: 16px;
+    min-height: 20px;
+}
