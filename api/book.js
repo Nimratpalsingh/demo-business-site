@@ -4,13 +4,35 @@ export default async function handler(req, res) {
     return res.status(405).json({ message: "Method not allowed" });
   }
 
-  const { name, phone, email, message } = req.body;
+  try {
+    const body = await new Promise((resolve, reject) => {
+      let data = "";
 
-  console.log("New Booking:");
-  console.log(name, phone, email, message);
+      req.on("data", chunk => {
+        data += chunk;
+      });
 
-  return res.status(200).json({
-    success: true,
-    message: "Booking received successfully!"
-  });
+      req.on("end", () => {
+        resolve(JSON.parse(data));
+      });
+
+      req.on("error", err => {
+        reject(err);
+      });
+    });
+
+    const { name, phone, email, message } = body;
+
+    console.log("New booking:", name, phone, email, message);
+
+    return res.status(200).json({
+      message: "Booking received successfully!"
+    });
+
+  } catch (error) {
+    console.error(error);
+    return res.status(500).json({
+      message: "Server error"
+    });
+  }
 }
