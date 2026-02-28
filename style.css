@@ -301,8 +301,8 @@ header p {
 /* Hamburger Icon */
 .menu-toggle {
     position: absolute;
-    top: 25px;
-    right: 30px;
+    top: 20px;
+    right: 20px;
     font-size: 28px;
     cursor: pointer;
     color: white;
@@ -339,4 +339,30 @@ header p {
 
 .side-menu.active {
     right: 0;
+}
+
+@media (max-width: 768px) {
+
+    header h1 {
+        font-size: 32px;
+    }
+
+    header p {
+        font-size: 14px;
+    }
+
+    .testimonial-box {
+        width: 95%;
+    }
+
+    .about,
+    .services {
+        width: 95%;
+        padding: 30px 20px;
+    }
+
+    section {
+        padding: 40px 15px;
+    }
+
 }
