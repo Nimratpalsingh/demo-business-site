@@ -1,9 +1,33 @@
+/* Page Fade In */
 body {
-    font-family: Arial;
-    margin: 0;
-    text-align: center;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
 }
 
+body.loaded {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    text-align: center;
+    background: linear-gradient(135deg, #111, #1c1c1c);
+    color: white;
+}
+
+/* Premium Heading Style */
+h1, h2 {
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+h2 {
+    text-transform: uppercase;
+    font-size: 26px;
+}
 header {
     background: #111;
     color: white;
@@ -18,8 +42,9 @@ header {
     font-weight: bold;
 }
 
+/* Glassmorphism Sections */
 section {
-    padding: 40px 20px;
+    padding: 60px 20px;
 }
 
 .services ul {
@@ -65,8 +90,12 @@ footer {
     box-shadow: 0 4px 8px rgba(0,0,0,0.3);
 }
 .testimonials {
-    padding: 50px 20px;
-    background-color: #f5f5f5;
+    padding: 60px 20px;
+    background: transparent;
+}
+
+.testimonials h2 {
+    color: white;
 }
 
 .testimonials h2 {
@@ -74,17 +103,20 @@ footer {
 }
 
 .testimonial-box {
-    background: white;
-    padding: 20px;
-    margin: 15px auto;
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(12px);
+    padding: 25px;
+    margin: 20px auto;
     width: 80%;
-    max-width: 500px;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    max-width: 550px;
+    border-radius: 16px;
+    border: 1px solid rgba(255,255,255,0.15);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+    color: white;
 }
 
 .stars {
-    color: #FFD700;
+    color: gold;
     font-size: 18px;
     margin-bottom: 10px;
 }
@@ -134,4 +166,177 @@ footer {
 .map-section iframe {
     border-radius: 12px;
     box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+}
+
+header h1 {
+    font-family: 'Bungee', cursive;
+    font-size: 48px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+}
+
+header p {
+    font-weight: 300;
+    letter-spacing: 1px;
+    font-size: 18px;
+}
+
+
+#booking {
+    padding: 50px 20px;
+    background: #f5f5f5;
+}
+
+#booking form {
+    max-width: 500px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+#booking input {
+    padding: 12px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+}
+
+#booking button {
+    cursor: pointer;
+}
+
+/* Premium Booking Page */
+
+.booking-wrapper {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #111, #1c1c1c);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.booking-card {
+    background: white;
+    padding: 40px;
+    border-radius: 18px;
+    width: 100%;
+    max-width: 520px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+    text-align: center;
+}
+
+.booking-card h2 {
+    margin-bottom: 10px;
+    font-size: 28px;
+}
+
+.booking-subtext {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 30px;
+}
+
+.booking-card form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.booking-card input,
+.booking-card textarea {
+    padding: 14px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    font-size: 14px;
+    transition: 0.3s ease;
+}
+
+.booking-card input:focus,
+.booking-card textarea:focus {
+    border-color: gold;
+    outline: none;
+    box-shadow: 0 0 8px rgba(255,215,0,0.4);
+}
+
+.booking-card button {
+    margin-top: 10px;
+    padding: 14px;
+    font-size: 15px;
+    border-radius: 8px;
+}
+
+.booking-card button:hover {
+    background: black;
+    color: gold;
+}
+
+.back-link {
+    display: inline-block;
+    margin-top: 20px;
+    font-size: 13px;
+    color: #666;
+    text-decoration: none;
+}
+
+.back-link:hover {
+    color: black;
+}
+
+.about,
+.services {
+    margin: 40px auto;
+    width: 90%;
+    max-width: 1100px;
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(18px);
+    border-radius: 20px;
+    border: 1px solid rgba(255,255,255,0.15);
+    box-shadow: 0 10px 35px rgba(0,0,0,0.3);
+    padding: 50px 30px;
+}
+
+/* Hamburger Icon */
+.menu-toggle {
+    position: absolute;
+    top: 25px;
+    right: 30px;
+    font-size: 28px;
+    cursor: pointer;
+    color: white;
+    z-index: 1001;
+}
+
+/* Side Menu */
+.side-menu {
+    position: fixed;
+    top: 0;
+    right: -260px;
+    width: 250px;
+    height: 100%;
+    background: #111;
+    display: flex;
+    flex-direction: column;
+    padding-top: 80px;
+    transition: 0.4s ease;
+    z-index: 1000;
+}
+
+.side-menu a {
+    color: white;
+    padding: 15px 30px;
+    text-decoration: none;
+    font-size: 15px;
+    transition: 0.3s;
+}
+
+.side-menu a:hover {
+    background: gold;
+    color: black;
+}
+
+.side-menu.active {
+    right: 0;
 }
